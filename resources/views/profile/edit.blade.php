@@ -48,17 +48,17 @@
 
             <div class="form-group">
                 <label for="current_password">Current Password</label>
-                <input type="password" name="current_password">
+                <input type="password" name="current_password" placeholder="Enter current password">
             </div>
 
             <div class="form-group">
                 <label for="password">New Password</label>
-                <input type="password" name="password">
+                <input type="password" name="password" placeholder="Enter new password">
             </div>
 
             <div class="form-group">
                 <label for="password_confirmation">Confirm New Password</label>
-                <input type="password" name="password_confirmation">
+                <input type="password" name="password_confirmation" placeholder="Confirm new password">
             </div>
 
             <button type="submit" class="button">Change Password</button>
@@ -75,18 +75,6 @@
             this.style.display = 'none'; // Sembunyikan tombol "Edit Profile"
         });
 
-        // Mengubah input menjadi readonly atau bisa diubah berdasarkan status edit
-        // function toggleInputReadOnly(status) {
-        //     var inputs = document.querySelectorAll('.input');
-        //     inputs.forEach(function(input) {
-        //         input.readOnly = status;
-        //     });
-        // }
-
-        // Memanggil fungsi toggleInputReadOnly saat halaman dimuat
-        // window.onload = function() {
-        //     toggleInputReadOnly(true); // Set input menjadi readonly saat halaman dimuat
-        // };
     </script>
 </body>
 </html>
