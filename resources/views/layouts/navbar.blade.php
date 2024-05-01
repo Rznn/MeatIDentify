@@ -5,8 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
       <link href="{{ asset('css/resultstyle.css') }}" rel="stylesheet">
-      {{-- <link href="{{ asset('css/dashstyle.css') }}" rel="stylesheet">
-      <link href="{{ asset('css/globals.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/dashstyle.css') }}" rel="stylesheet">
+      {{-- <link href="{{ asset('css/globals.css') }}" rel="stylesheet">
       <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
   </head>
   <body>
