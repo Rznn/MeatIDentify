@@ -1,7 +1,7 @@
 @include('layouts.navbar')
 
     <div class="history">
-        <div class="recent"><img src="img/recent.svg" alt=""><h3>Recently Search</h3></div>
+        <div class="recent"><img src="img/recent.svg" alt=""><h5>Recently Search</h5></div><br /><br />
         <div class="grid">
         <div class="card">
             <div class="img-holder"><img src="img/pork1.png" alt=""></div>
@@ -24,6 +24,8 @@
         </div>
         </div>
         </div>
+
+        <br /><br />
 
         <div class="grid">
             <div class="card">

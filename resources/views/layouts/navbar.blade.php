@@ -14,7 +14,7 @@
       <div class="right">
         <div class="logo"><img src="{{ asset('img/logo.png') }}" alt="" /></div>
         <div class="navigation">
-          <a href="">Home</a><a href="">History</a>
+          <a href="dashboard">Home</a><a href="history">History</a>
         </div>
       </div>
       <div class="dropdown">
@@ -25,7 +25,7 @@
         <div id="myDropdown" class="dropdown-content">
           <a class="dropdown-header" href="#">MeatIDentify</a>
           <hr>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="profile">
             <img src="{{ asset('img/edit-profile.svg') }}" alt="">
             <p>Profile</p>
           </a>
