@@ -49,7 +49,7 @@
         <div class="right">
           <div class="logo"><img src="img/logo.png" alt="" /></div>
           <div class="navigation">
-            <a href="">Home</a><a href="">History</a>
+            <a href="dashboard">Home</a><a href="history">History</a><a href="profile">Profile</a>
           </div>
         </div>
 
