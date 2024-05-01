@@ -40,7 +40,7 @@
             <button type="submit" class="button">Update Profile</button>
 
             {{-- <button type="submit" class="button">Update Profile</button> --}}
-        </form>
+        </form><br />
 
         <h1 class="centered-heading">Change Password</h1>
         <form action="{{ route('profile.updatePassword') }}" method="POST">
