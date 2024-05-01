@@ -180,7 +180,7 @@
                 <div class="frame-4">
                   <div class="group-3">
                     <div class="group-4">
-                      <p class="text-wrapper-15">What types of meat can be detected?</p>
+                      <p class="text-wrapper-15">What is MeatIDentify?</p>
                       <div class="vector-wrapper">
                         <i class="vector fas fa-chevron-right"></i>
                       </div>
