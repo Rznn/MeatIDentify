@@ -1,3 +1,39 @@
+.header {
+  position: fixed;
+  width: 100%; /* Menjadikan header sepanjang lebar layar */
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000; /* Pastikan header selalu di atas */
+  padding: 20px;
+}
+
+.div-cuheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Padding kanan kiri untuk tidak terlalu mepet ke pinggir */
+  height: 60px; /* Tentukan tinggi header */
+}
+
+.logo {
+  height: 50px; /* Sesuaikan dengan tinggi yang diinginkan */
+}
+
+.navigation .button {
+  padding: 16px 16px;
+  margin-left: 10px; /* Jarak antar tombol */
+  text-decoration: none;
+  color: white; /* Warna teks */
+  background-color: #7b68ee;
+  border-radius: 9px;
+  transition: background-color 0.3s; /* Efek transisi untuk hover */
+  font-family: "Inter", Helvetica;
+}
+
+.navigation .button:hover {
+  background-color: #0056b3; /* Warna saat di-hover */
+}
+
 .landing-page {
     background-color: #ffffff;
     display: flex;
@@ -76,9 +112,10 @@
 
   .landing-page .text-wrapper-2 {
     position: absolute;
-    width: 73px;
-    height: 31px;
-    top: 56px;
+    vertical-align: top;
+    width: 179px;
+    height: 92px;
+    top: 25px;
     left: 179px;
     font-family: "Inter", Helvetica;
     font-weight: 800;
@@ -308,12 +345,40 @@
     line-height: 27px;
   }
 
+  .landing-page .grid-beef{
+    position: absolute;
+    top: 5%;
+    left: -5%;
+    transform: translate(-50%, -50%);
+  }
+
+  .landing-page .grid-horse{
+    position: absolute;
+    top: 5%;
+    left: -5%;
+    transform: translate(-50%, -50%);
+  }
+
+  .landing-page .grid-pork{
+    position: absolute;
+    top: 5%;
+    left: -5%;
+    transform: translate(-50%, -50%);
+  }
+
   .landing-page .criteria-safe-meat {
     position: absolute;
     width: 1300px;
     height: 600px;
     top: 4135px;
-    left: 62px;
+    left: 0%;
+  }
+
+  .landing-page .grid-faq{
+    position: absolute;
+    top: 5%;
+    left: -5%;
+    transform: translate(-50%, -50%);
   }
 
   .landing-page .heading {
@@ -1010,11 +1075,18 @@
     border-radius: 5px;
   }
 
+  .FAQ {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* other styles */
+  }
+
   .landing-page .about {
     position: absolute;
-    width: 1425px;
+    width: 100%;
     height: 297px;
-    top: 6048px;
+    top: 6500px;
     left: 0;
   }
 
@@ -1024,13 +1096,13 @@
 
   .landing-page .overlap-10 {
     position: relative;
-    width: 1425px;
+    width: 100%;
     height: 297px;
   }
 
   .landing-page .main-2 {
     position: absolute;
-    width: 1425px;
+    width: 100%px;
     height: 297px;
     top: 0;
     left: 0;
@@ -1039,7 +1111,7 @@
 
   .landing-page .footer {
     position: relative;
-    width: 1370px;
+    width: 100%;
     height: 43px;
     top: 10px;
     background-color: transparent;
@@ -1047,7 +1119,7 @@
 
   .landing-page .overlap-11 {
     position: absolute;
-    width: 1252px;
+    width: 100%;
     height: 181px;
     top: 42px;
     left: 43px;
@@ -1055,7 +1127,7 @@
 
   .landing-page .overlap-group-5 {
     position: absolute;
-    width: 1117px;
+    width: 100%;
     height: 181px;
     top: 0;
     left: 0;
@@ -1080,10 +1152,10 @@
 
   .landing-page .frame-3 {
     position: absolute;
-    width: 1117px;
+    width: 100%;
     height: 146px;
     top: 35px;
-    left: 0;
+    left: 5%;
   }
 
   .landing-page .text-wrapper-7 {
@@ -1091,13 +1163,14 @@
     width: 78px;
     height: 26px;
     top: 17px;
-    left: 1039px;
+    left: 1000px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #514b81;
     font-size: 16px;
     letter-spacing: 0;
     line-height: 21px;
+    right: 10%;
   }
 
   .landing-page .text-wrapper-8 {
@@ -1105,13 +1178,14 @@
     width: 78px;
     height: 26px;
     top: 43px;
-    left: 1039px;
+    left: 1000px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #514b81;
     font-size: 16px;
     letter-spacing: 0;
     line-height: 21px;
+    right: 10%;
   }
 
   .landing-page .text-wrapper-9 {
@@ -1134,7 +1208,8 @@
     width: 211px;
     height: 21px;
     top: 13px;
-    left: 1041px;
+    left: 1000px;
+    right: 10%;
     font-family: "Inter", Helvetica;
     font-weight: 800;
     color: #292d34;
@@ -1149,7 +1224,7 @@
     width: 123px;
     height: 18px;
     top: -2px;
-    left: 108px;
+    left: 100px;
     font-family: "Inter", Helvetica;
     font-weight: 400;
     color: #514b81;
@@ -1220,7 +1295,7 @@
     width: 53px;
     height: 18px;
     top: -2px;
-    left: 141px;
+    left: 170px;
     font-family: "Inter", Helvetica;
     font-weight: 400;
     color: #514b81;
@@ -1243,7 +1318,7 @@
     width: 54px;
     height: 18px;
     top: 11px;
-    left: 1316px;
+    left: 1350px;
     font-family: "Inter", Helvetica;
     font-weight: 400;
     color: #514b81;
@@ -1295,19 +1370,20 @@
   }
 
   .landing-page .frame-wrapper {
-    position: relative;
+    position: absolute;
     width: 938px;
     height: 645px;
     top: 100px;
     left: 182px;
+    padding-bottom: 400px;
   }
-
+  
   .landing-page .frame-4 {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 31px;
-    position: relative;
+    position: absolute;
   }
 
   .landing-page .group-3 {
@@ -1320,18 +1396,33 @@
   }
 
   .landing-page .group-4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
     position: relative;
     width: 858px;
     height: 53px;
     top: 42px;
     left: 41px;
   }
+  
+  .landing-page .text-wrapper-15, .landing-page .text-wrapper-16 {
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: var(--neutral-800);
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 29.3px;
+  }
+  
+  .landing-page .vector {
+    cursor: pointer; 
+  }
 
   .landing-page .text-wrapper-16 {
-    position: absolute;
+    position: relative;
     width: 540px;
     height: 59px;
-    top: 12px;
     left: 0;
     font-family: "Inter", Helvetica;
     font-weight: 500;
@@ -1339,6 +1430,32 @@
     font-size: 24px;
     letter-spacing: 0;
     line-height: 29.3px;
+    margin-bottom: 200px;
+  }
+  
+  .landing-page .group-3.active {
+    border: 2px solid #443ee6;
+    padding-bottom: 200px;
+  }
+
+  /* Aturan untuk menampilkan jawaban */
+  .landing-page .answer {
+    display: none;  /* sembunyikan secara default */
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: gray;
+  }
+
+  .landing-page .group-3.active .answer {
+    display: block; /* tampilkan saat aktif */
+  }
+
+  .landing-page .vector.rotate {
+    transform: rotate(90deg); /* putar ikon saat aktif */
+    transition: transform 0.3s ease;
   }
 
   .landing-page .vector-wrapper {
@@ -1352,12 +1469,21 @@
     box-shadow: 0px 5.24px 16.76px #080f340f;
   }
 
+  .landing-page .vector-wrapper.active {
+    background-color: #443ee6;
+  }
+
+  .landing-page .vector-wrapper.active .vector {
+    color: #fff;
+  }
+
   .landing-page .vector {
     position: absolute;
     width: 11px;
     height: 19px;
     top: 17px;
     left: 22px;
+    color: #443ee6;
   }
 
   .landing-page .group-5 {
@@ -1366,6 +1492,10 @@
     height: 71px;
     top: 42px;
     left: 41px;
+  }
+
+  .landing-page .group-3.active .group-3 {
+      padding-bottom: 20px; /* Menambahkan padding bawah ketika aktif */
   }
 
   .landing-page .text-wrapper-17 {
@@ -1395,7 +1525,7 @@
     box-shadow: 0px 12.57px 25.14px #14132a0a, 0px -2.09px 4.19px #14132a05, 0px 3.14px 14.66px #4939ff08;
   }
 
-  .landing-page .text-wrapper-18 {
+  .text-wrapper-18 {
     position: absolute;
     width: 54px;
     height: 21px;
@@ -1411,58 +1541,7 @@
     white-space: nowrap;
   }
 
-  .landing-page .header {
-    position: fixed;
-    width: 1425px;
-    height: 101px;
-    top: 0;
-    left: 0;
-    background-color: #ffffff;
-  }
-
-  .landing-page .div-cuheader-wrapper {
-    width: 1425px;
-    height: 101px;
-    background-color: #ffffff01;
-    border-radius: 9px;
-    box-shadow: 0px 10px 25px #101e361a;
-  }
-
-  .landing-page .div-cuheader {
-    position: relative;
-    width: 1300px;
-    height: 101px;
-    left: 62px;
-  }
-
-  .landing-page .nav {
-    position: relative;
-    width: 1138px;
-    height: 101px;
-    left: 162px;
-  }
-
-  .landing-page .div-cunavigation {
-    position: absolute;
-    width: 355px;
-    height: 101px;
-    top: 0;
-    left: 783px;
-  }
-
-  .landing-page .button {
-    all: unset;
-    box-sizing: border-box;
-    position: absolute;
-    width: 102px;
-    height: 43px;
-    top: 29px;
-    left: 153px;
-    background-color: #7b68ee;
-    border-radius: 9px;
-  }
-
-  .landing-page .overlap-group-6 {
+  .overlap-group-6 {
     position: relative;
     height: 43px;
     background-color: #ffffff01;
@@ -1470,7 +1549,7 @@
     box-shadow: 0px 10px 25px #7b68ee66;
   }
 
-  .landing-page .text-wrapper-19 {
+  .text-wrapper-19 {
     position: absolute;
     width: 44px;
     height: 21px;
@@ -1485,7 +1564,7 @@
     white-space: nowrap;
   }
 
-  .landing-page .link-4 {
+  .link-4 {
     position: absolute;
     width: 91px;
     height: 43px;
@@ -1495,13 +1574,13 @@
     border-radius: 9px;
   }
 
-  .landing-page .overlap-13 {
+  .overlap-13 {
     position: relative;
     height: 43px;
     border-radius: 9px;
   }
 
-  .landing-page .before-11 {
+  .before-11 {
     position: absolute;
     width: 91px;
     height: 43px;
@@ -1512,7 +1591,7 @@
     box-shadow: 0px 10px 25px #101e361a;
   }
 
-  .landing-page .text-wrapper-20 {
+  .text-wrapper-20 {
     position: absolute;
     width: 44px;
     height: 21px;
@@ -1527,7 +1606,7 @@
     white-space: nowrap;
   }
 
-  .landing-page .frame-5 {
+  .frame-5 {
     top: 25px;
     left: -148px;
     position: absolute;
@@ -3448,7 +3527,6 @@
     width: 1433px;
     height: 297px;
     top: 2033px;
-    left: -4px;
   }
 
   .home .group-3 {
@@ -6189,3 +6267,5 @@
     left: 0;
     object-fit: cover;
   }
+
+  
