@@ -218,6 +218,76 @@
     max-width: 100%;
   }
 
+  .container {
+    max-width: 400px;
+    padding: 40px;
+    background-color: #f8f7fe;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .centered-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Roboto-Bold", Helvetica;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #292d34;
+    font-size: 12px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: "Roboto-Medium", Helvetica;
+    color: #292d34;
+  }
+
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9999;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: "Roboto-Medium", Helvetica;
+    color: #292d34;
+  }
+
+  .button {
+    background-color: #7b68ee;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 14px;
+  }
+  
+  .button:hover {
+    background-color: #405d8a;
+  }
+
   footer {
     display: flex;
     justify-content: space-between;

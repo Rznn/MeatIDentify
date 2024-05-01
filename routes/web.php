@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\OauthController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('landing');
@@ -19,6 +20,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
 
 Route::get('/dashboard', [UserController::class, 'dashboard']);
+Route::get('/history', [UserController::class, 'history']);
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -29,4 +31,11 @@ Route::get('auth/google/callback', [OauthController::class, 'handleProviderCallb
 
 Route::post('/upload', [UserController::class, 'store'])->name('upload');
 Route::get('/result/{id}', [UserController::class, 'show'])->name('result');
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+
+
 

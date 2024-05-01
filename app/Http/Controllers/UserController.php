@@ -46,4 +46,9 @@ class UserController extends Controller
         $image = Image::findOrFail($id);
         return view('result', ['image' => $image]);
     }
+
+    public function history()
+    {
+        return view('history');
+    }
 }
