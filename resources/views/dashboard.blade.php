@@ -1,149 +1,113 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-</head>
-<body>
-    <h1>
-        Welcome to Dashboard
-    </h1>
+@section('title', 'Home')
+@include('layouts.navbar')
 
-    <p>Upload Image</p>
-
-    <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <div>
-            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-            <input type="hidden" name="meat_id" value="1">
-            <input type="file" name="image" id="image">
-        </div>
-        <button type="submit">Detect</button>
-    </form>
-
-    <a href="{{route('logout')}}"> Sign out </a>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#image').on('change', function() {
-                $('#uploadForm').submit();
-            });
-        });
-    </script>
-</body>
-</html> --}}
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="css/dashstyle.css" />
-  </head>
-  <body>
-    <div class="pagewrapper">
-      <nav>
-        <div class="right">
-          <div class="logo"><img src="img/logo.png" alt="" /></div>
-          <div class="navigation">
-            <a href="dashboard">Home</a><a href="history">History</a><a href="profile">Profile</a>
-          </div>
-        </div>
-
-        <div class="login"><img src="img/profile.svg" alt=""><a href="{{ route('logout') }}">Username</a></div>
-      </nav>
-      <div class="main">
-        <div class="title">
-         <img src="img/title.svg" alt="">
-          <h2>Get detail informations by uploading meat image.</h2>
-          <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data" id="uploadForm">
-          @csrf
-          <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-          <input type="hidden" name="meat_id" value="1">
-          {{-- <div class="upload">
-            <button onclick="document.getElementById('getFile').click()">
-              <h3>Upload Image</h3>
-              <img src="upload-icon.svg" alt="" />
-            </button>
-            <input type="file" id="getFile" name="image" style="display: none"/>
-          </div> --}}
-          {{-- <div class="upload"> --}}
-            {{-- <h3>Upload Image</h3>
-            <input type="file" id="image" name="image" onchange="uploadImage()"/> --}}
-
+<link href="{{ asset('css/dashstyle.css') }}" rel="stylesheet">
+<div class="main">
+    <div class="title">
+        <img src="img/title.svg" alt="">
+        <h2>Get detail informations by uploading meat image.</h2>
+        <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+            @csrf
+            {{-- <input type="hidden" name="user_id" value="{{ Auth::id() }}"> --}}
+            {{-- <input type="hidden" name="meat_id" value="2"> --}}
             <label for="file-upload" class="custom-file-upload">
                 Upload Image
             </label>
             <input id="file-upload" type="file" name="image" onchange="uploadImage()"/>
-          {{-- </div> --}}
-          </form>
+        </form>
+    </div>
+</div>
 
-        </div>
-
-        </div>
-
-      </div>
-      <div class="history">
-        <div class="recent"><img src="img/recent.svg" alt=""><h3>Recently Search</h3></div>
-        <div class="grid">
+<div class="history">
+    <div class="recent">
+        <img src="img/recent.svg" alt="">
+        <h3>Recently Search</h3>
+    </div>
+    <div class="grid">
+        @foreach ($recent_image as $image)
         <div class="card">
-            <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-            <div class="desc"><div class="left"><p>2 hours ago</p></div>
-      <div class="right"><div class="button">Meat</div></div>
-    </div>
-    </div>
-    <div class="card"><div class="img-holder"><img src="img/pork1.png" alt=""></div>
-      <div class="desc"><div class="left"><p>2 hours ago</p> </div>
-      <div class="right"><div class="button">Meat</div></div>
-    </div>
-    </div>
-    <div class="card"><div class="img-holder"><img src="img/pork1.png" alt=""></div>
-      <div class="desc"><div class="left"><p>2 hours ago</p> </div>
-      <div class="right"><div class="button">Meat</div></div>
-    </div>
-    </div>
+            <div class="img-holder">
+                <img src="{{ asset("/storage/images/" . $image->image_path) }}" alt="">
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <img src="img/clock1.svg" alt="">
+                    <p>{{ $image->uploaded_at->diffForHumans() }}</p>
+                </div>
+                <div class="right">
+                    <a class="button" href="{{ route('result', $image->id) }}">
+                        {{$image->meats->name}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        {{-- <div class="card">
+            <div class="img-holder">
+                <img src="img/r-input-meat.jpg" alt="">
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <img src="img/clock1.svg" alt="">
+                    <p>2 hours ago</p>
+                </div>
+                <div class="right">
+                    <div class="button">
+                        Meat
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img-holder">
+                <img src="img/r-input-pork.jpg" alt="">
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <img src="img/clock1.svg" alt="">
+                    <p>2 hours ago</p>
+                </div>
+                <div class="right">
+                    <div class="button">
+                        Pork
+                    </div>
+                </div>
+            </div>
+        </div> --}}
     </div>
 </div>
+
 <div class="how-to">
-  <h2>How MeatIDentify Works</h2>
-  <div class="grid"><div class="card">
-            <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-            <div class="desc"><h3>Pork Blabla</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  at debitis ex rem cumque deleniti dicta sed sint.</p>
-
-    </div>
-    </div>
-    <div class="card">
-            <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-            <div class="desc"><h3>Pork Blabla</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  at debitis ex rem cumque deleniti dicta sed sint.</p>
-
-    </div>
-    </div>
-    <div class="card">
-            <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-            <div class="desc"><h3>Pork Blabla</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  at debitis ex rem cumque deleniti dicta sed sint.</p>
-
-    </div>
-    </div> </div>
+<h2>How MeatIDentify Works</h2>
+<div class="grid"><div class="card">
+<div class="img-holder"><img src="img/r-meat1.png" alt=""></div>
+<div class="desc"><h3>Identify meat with an image</h3> <p>Instantly identify plants with AI: upload a photo, and get accurate results within seconds.</p>
 
 </div>
-<footer>
-  <div class="left"><div class="logo"><img src="img/logo.png" alt="">
-  <p>MeatIDentify was dedicated to the classification of meat, where we aim to provide comprehensive information about various types of meat. We are committed to providing accurate and valuable knowledge to our visitors to help them make informed decisions about meat selection and consumption</p></div></div>
-  <div class="right"><div class="sect-1"><h3>Connect</h3>
-    <div class="icon"><img src="img/fb.svg" alt=""><img src="img/linkedin.svg" alt=""><img src="img/ig.svg" alt=""><img src="img/twit.svg " alt=""></div>
-  </div><div class="sect-2"><h3>Download</h3> <p>Andorid</p> <p>IPhone</p></div></div>
+</div>
+<div class="card">
+<div class="img-holder"><img src="img/r-meat3.png" alt=""></div>
+<div class="desc"><h3>Recognize the meat category</h3> <p>Our AI system is trained to recognize various types of meat, from beef, pork, or horse meat.</p>
 
-</footer>
-    </div>
+</div>
+</div>
+<div class="card">
+<div class="img-holder"><img src="img/meats-many.webp" alt=""></div>
+<div class="desc"><h3>Get the nutritions informations</h3> <p>MeatIDentify provides detailed nutritional information. From protein content to fat percentages and number of calories.</p>
 
-    <script>
-        function uploadImage() {
-            document.getElementById('uploadForm').submit();
-        }
-    </script>
+</div>
+</div> </div>
+</div>
 
-  </body>
-</html>
+<script>
+    function uploadImage() {
+        document.getElementById('uploadForm').submit();
+    }
+</script>
+@if ($errors->any())
+<script>
+    var errorMessage = @json($errors->all());
+    alert(errorMessage.join('\n'));
+</script>
+@endif
+@include('layouts.footer')

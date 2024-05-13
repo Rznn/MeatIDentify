@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('meat_id');
             $table->string('image_path');
             $table->dateTime('uploaded_at');
-            $table->integer('probability')->nullable();
+            $table->string('probability')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('meat_id')->references('id')->on('meats');
             $table->timestamps();

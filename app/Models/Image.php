@@ -19,11 +19,17 @@ class Image extends Model
 
     public function meats()
     {
-        return $this->belongsTo(Meat::class);
+        return $this->belongsTo(Meat::class, 'meat_id');
     }
 
-    protected $attributes = [
-        'meat_id' => 1
-    ];
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    // protected $attributes = [
+    //     'meat_id' => 1,
+    //     'probability' => '93',
+    // ];
 
 }

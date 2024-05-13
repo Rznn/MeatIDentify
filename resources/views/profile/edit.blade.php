@@ -1,3 +1,4 @@
+@section('title', 'Edit Profile')
 @include('layouts.navbar')
 
     <div class="container">

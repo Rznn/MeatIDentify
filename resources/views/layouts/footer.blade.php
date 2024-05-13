@@ -10,16 +10,15 @@
         <div class="sect-1">
           <h3>Connect</h3>
           <div class="icon">
-            <img src="{{ asset('img/fb.svg') }}" alt="">
-            <img src="{{ asset('img/linkedin.svg') }}" alt="">
-            <img src="{{ asset('img/ig.svg') }}" alt="">
-            <img src="{{ asset('img/twit.svg') }}" alt="">
+            <a href="https://www.linkedin.com/"><img src="{{ asset('img/linkedin.svg') }}" alt=""></a>
+            <a href="https://www.instagram.com/"><img src="{{ asset('img/ig.svg') }}" alt=""></a>
+            <a href="https://id-id.facebook.com/"><img src="{{ asset('img/fb.svg') }}" alt=""></a>
           </div>
         </div>
         <div class="sect-2">
-          <h3>Download</h3> 
-          <p>Android</p> 
-          <p>IPhone</p>
+          <h3>Contact Person</h3>
+          <p><a href="https://wa.me/6285156226223?" target="_blank">First Admin</a></p>
+          <p><a href="https://wa.me/6285747580700?" target="_blank">Second Admin</a></p>
         </div>
       </div>
     </div>
@@ -30,6 +29,6 @@
       <p>Terms</p>
     </div>
   </footer>
-  
+
 </body>
 </html>

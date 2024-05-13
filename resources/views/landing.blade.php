@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/styleguide.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>MeatIDentify</title>
   </head>
   <body>
   <header class="header">
@@ -18,9 +19,9 @@
     </div>
   </header>
     <div class="landing-page">
-      
+
       <div class="div">
-        
+
         <div class="div-wrapper">
           <div class="div-card-content">
             <div class="heading-monitor">Meat</div>
@@ -37,7 +38,7 @@
         </div>
         <div class="frame">
           <div class="overlap">
-            
+
             <div class="overlap-2">
               <img class="master-the-art-of" src="img/fontlanding1.png" />
               <div class="laptop">
@@ -88,7 +89,7 @@
                 <div class="picture"><div class="heading-add-images-2">Benefits</div></div>
                 <img class="diamkan-daging" src="img/sapi3_landing.png" />
                 <p class="high-quality-protein">
-                  High-quality protein source<br />Packed with iron<br />Contains various vitamins for energy
+                  High-quality protein source<br />Packed with iron<br />Contains various vitamins <br>for energy
                   metabolism<br />Good source of zinc<br />Can be prepared in countless ways
                 </p>
               </div>
@@ -125,7 +126,7 @@
                 <div class="before-7"></div>
                 <div class="picture-2"><div class="heading-add-images-3">Benefits</div></div>
                 <p class="lean-protein-source">
-                  Lean protein source<br />Relatively low in fat<br />Contains important nutrients for energy
+                  Lean protein source<br />Relatively low in fat<br />Contains important nutrients <br>for energy
                   production<br />Offering a unique culinary experience<br />Holds cultural significance
                 </p>
                 <img class="resep-olahan-daging" src="img/kuda3_landing.png" />
@@ -164,15 +165,15 @@
                 <img class="element-2" src="img/babi3_landing.png" />
                 <div class="heading-add-images-6">Benefits</div>
                 <p class="rich-source-of-lean">
-                  Rich source of lean protein<br />Containts essential nutrients, such as B Vitamins and Zinc<br />Assist
-                  in red blood cell formation<br />Provides a tasty flavor profile in various dishes
+                  Rich source of lean protein<br />Containts essential nutrients, <br>such as B Vitamins and Zinc<br />Assist
+                  in red blood cell formation<br />Provides a tasty flavor profile <br>in various dishes
                 </p>
               </div>
             </div>
             <div class="before-10"></div>
           </div>
         </div>
-        
+
         <div class="grid-faq">
           <div class="FAQ">
             <div class="group-wrapper">
@@ -220,11 +221,11 @@
             <div class="overlap-12"><div class="text-wrapper-17">Frequently Asked Questions (FAQ)</div></div>
           </div>
         </div>
-        
-        
+
+
       </div>
     </div>
-    
+
     <div class="about">
           <div class="group">
             <div class="overlap-10">
@@ -263,7 +264,7 @@
           </div>
     </div>
   </body>
-  
+
   <script>
     document.querySelectorAll('.group-3 .vector').forEach(vector => {
         vector.addEventListener('click', function() {

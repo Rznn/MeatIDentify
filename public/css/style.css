@@ -100,7 +100,7 @@
     position: absolute;
     width: 595px;
     height: 126px;
-    top: 133px;
+    top: 170px;
     left: 0;
     font-family: "Inter", Helvetica;
     font-weight: 600;
@@ -115,11 +115,11 @@
     vertical-align: top;
     width: 179px;
     height: 92px;
-    top: 25px;
-    left: 179px;
+    top: 32px;
+    left: 175px;
     font-family: "Inter", Helvetica;
     font-weight: 800;
-    font-style: italic;
+    /* font-style: italic; */
     color: #292d34;
     font-size: 48px;
     letter-spacing: 0;
@@ -143,19 +143,20 @@
     height: 356px;
     top: 26px;
     left: 686px;
-    background-color: #e6dbe9;
-    border-radius: 10px;
+    background-color: #fcf0ff;
+    border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0px 0px 10px #00000033;
+    /* box-shadow: 0px 0px 10px #00000033; */
   }
 
   .landing-page .best-meat-source-gut {
     position: absolute;
-    width: 555px;
-    height: 291px;
-    top: 33px;
-    left: 22px;
+    width: 490px;
+    height: 265px;
+    top: 47px;
+    left: 60px;
     object-fit: cover;
+    border-radius: 20px;
   }
 
   .landing-page .frame {
@@ -183,6 +184,7 @@
     border-radius: 12px;
     box-shadow: 0px 4px 4px #574bac26;
     background: linear-gradient(180deg, rgb(69, 196, 249) 0%, rgb(125, 9, 255) 50.33%, rgb(255, 11, 229) 100%);
+    cursor: pointer;
   }
 
   .landing-page .overlap-group {
@@ -406,13 +408,13 @@
     position: absolute;
     width: 299px;
     height: 162px;
-    top: 237px;
+    top: 225px;
     left: 31px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
     letter-spacing: 0;
     line-height: 27px;
   }
@@ -483,7 +485,7 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .overlap-group-2 {
@@ -499,7 +501,7 @@
     top: 122px;
     left: 0;
     background-color: #ffffff01;
-    border-radius: 9px;
+    border-radius: 30px;
     box-shadow: 0px 16px 78px #9b51e01a;
   }
 
@@ -513,14 +515,14 @@
 
   .landing-page .heading-add-images {
     height: 90px;
-    top: 164px;
+    top: 185px;
     left: 22px;
     font-weight: 700;
     position: absolute;
     width: 268px;
     font-family: "Inter", Helvetica;
     color: #333333;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0;
     line-height: 53.2px;
@@ -544,8 +546,8 @@
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
     letter-spacing: 0;
     line-height: 25px;
   }
@@ -557,19 +559,19 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .heading-add-images-2 {
     position: absolute;
     width: 268px;
     height: 90px;
-    top: 162px;
+    top: 185px;
     left: 22px;
     font-family: "Inter", Helvetica;
     font-weight: 700;
     color: #333333;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0;
     line-height: 53.2px;
@@ -579,13 +581,13 @@
     position: absolute;
     width: 299px;
     height: 162px;
-    top: 351px;
+    top: 340px;
     left: 31px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
     letter-spacing: 0;
     line-height: 27px;
   }
@@ -597,7 +599,7 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .diamkan-daging {
@@ -613,14 +615,15 @@
     position: absolute;
     width: 321px;
     height: 228px;
-    top: 331px;
+    top: 335px;
     left: 20px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 0;
     line-height: 27px;
+    text-align: center;
   }
 
   .landing-page .before-4 {
@@ -675,7 +678,7 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .overlap-group-3 {
@@ -706,14 +709,14 @@
 
   .landing-page .heading-add-images-3 {
     height: 103px;
-    top: 170px;
+    top: 185px;
     left: 22px;
     font-weight: 800;
     position: absolute;
     width: 268px;
     font-family: "Inter", Helvetica;
     color: #333333;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0;
     line-height: 53.2px;
@@ -737,8 +740,8 @@
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
     letter-spacing: 0;
     line-height: 27px;
   }
@@ -750,7 +753,7 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .overlap-5 {
@@ -782,14 +785,14 @@
 
   .landing-page .heading-add-images-4 {
     height: 103px;
-    top: 271px;
+    top: 285px;
     left: 46px;
     font-weight: 800;
     position: absolute;
     width: 268px;
     font-family: "Inter", Helvetica;
     color: #333333;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0;
     line-height: 53.2px;
@@ -804,8 +807,8 @@
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
     letter-spacing: 0;
     line-height: 27px;
   }
@@ -817,7 +820,7 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .overlap-6 {
@@ -854,18 +857,21 @@
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 0;
     line-height: 27px;
+    text-align: center;
   }
 
   .landing-page .resep-olahan-daging {
     position: absolute;
     width: 332px;
-    height: 247px;
+    height: 252px;
     top: 0;
     left: 14px;
     object-fit: cover;
+    border-radius: 30px;
+    /* box-shadow: 0px 16px 78px #49ccf91a; */
   }
 
   .landing-page .before-8 {
@@ -875,7 +881,7 @@
     top: 123px;
     left: 571px;
     background-color: #1f70c1;
-    border-radius: 5px;
+    border-radius: 30px;
   }
 
   .landing-page .pork-meat {
@@ -919,27 +925,27 @@
     top: 124px;
     left: 0;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .overlap-group-4 {
     position: relative;
     height: 409px;
     background-color: #ffffff01;
-    border-radius: 9px;
+    border-radius: 30px;
     box-shadow: 0px 16px 78px #00b8841a;
   }
 
   .landing-page .heading-add-images-5 {
     height: 90px;
-    top: 123px;
+    top: 140px;
     left: 46px;
     font-weight: 800;
     position: absolute;
     width: 268px;
     font-family: "Inter", Helvetica;
     color: #333333;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0;
     line-height: 53.2px;
@@ -985,8 +991,8 @@
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
     letter-spacing: 0;
     line-height: 27px;
   }
@@ -1007,7 +1013,7 @@
     position: absolute;
     width: 360px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .landing-page .overlap-9 {
@@ -1023,7 +1029,7 @@
     top: 122px;
     left: 0;
     background-color: #ffffff01;
-    border-radius: 9px;
+    border-radius: 30px;
     box-shadow: 0px 16px 78px #00b8841a;
   }
 
@@ -1038,14 +1044,14 @@
 
   .landing-page .heading-add-images-6 {
     height: 90px;
-    top: 245px;
+    top: 260px;
     left: 46px;
     font-weight: 800;
     position: absolute;
     width: 268px;
     font-family: "Inter", Helvetica;
     color: #333333;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0;
     line-height: 53.2px;
@@ -1055,14 +1061,15 @@
     position: absolute;
     width: 321px;
     height: 228px;
-    top: 311px;
+    top: 330px;
     left: 16px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: #000000;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 0;
     line-height: 27px;
+    text-align: center;
   }
 
   .landing-page .before-10 {
@@ -1086,7 +1093,7 @@
     position: absolute;
     width: 100%;
     height: 297px;
-    top: 6500px;
+    top: 6450px;
     left: 0;
   }
 
@@ -1377,7 +1384,7 @@
     left: 182px;
     padding-bottom: 400px;
   }
-  
+
   .landing-page .frame-4 {
     display: inline-flex;
     flex-direction: column;
@@ -1398,14 +1405,14 @@
   .landing-page .group-4 {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     position: relative;
     width: 858px;
     height: 53px;
     top: 42px;
     left: 41px;
   }
-  
+
   .landing-page .text-wrapper-15, .landing-page .text-wrapper-16 {
     font-family: "Inter", Helvetica;
     font-weight: 500;
@@ -1414,9 +1421,9 @@
     letter-spacing: 0;
     line-height: 29.3px;
   }
-  
+
   .landing-page .vector {
-    cursor: pointer; 
+    cursor: pointer;
   }
 
   .landing-page .text-wrapper-16 {
@@ -1432,7 +1439,7 @@
     line-height: 29.3px;
     margin-bottom: 200px;
   }
-  
+
   .landing-page .group-3.active {
     border: 2px solid #443ee6;
     padding-bottom: 200px;
@@ -6268,4 +6275,3 @@
     object-fit: cover;
   }
 
-  

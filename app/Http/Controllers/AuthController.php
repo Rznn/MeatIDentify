@@ -34,7 +34,7 @@ class AuthController extends Controller
             }
         }
         //error
-        return back()->with('error', 'Error Email or Password');
+        return redirect()->back()->withErrors(['loginError' => 'Invalid credentials. Please try again.'])->withInput();
     }
 
     public function register()
@@ -50,13 +50,18 @@ class AuthController extends Controller
         //     'password' => 'required|same:password_confirmation',
         //     ])->validate();
 
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required|same:password_confirmation',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
         ], [
-            'password.same' => 'The password confirmation does not match.'
+            'password.confirmed' => 'The password confirmation does not match.'
         ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         User::create([
             'name' => $request->name,

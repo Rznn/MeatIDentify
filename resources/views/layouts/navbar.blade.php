@@ -3,7 +3,7 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
+      <title>@yield('title')</title>
       <link href="{{ asset('css/resultstyle.css') }}" rel="stylesheet">
       <link href="{{ asset('css/dashstyle.css') }}" rel="stylesheet">
       {{-- <link href="{{ asset('css/globals.css') }}" rel="stylesheet">
@@ -12,20 +12,20 @@
   <body>
     <nav>
       <div class="right">
-        <div class="logo"><img src="{{ asset('img/logo.png') }}" alt="" /></div>
+        <div class="logo"><a href="/dashboard"><img src="{{ asset('img/logo.png') }}" alt="" /></a></div>
         <div class="navigation">
-          <a href="dashboard">Home</a><a href="history">History</a>
+          <a href="/dashboard">Home</a><a href="/history">History</a>
         </div>
       </div>
       <div class="dropdown">
         <div onclick="toggleDropdown()" class="login">
           <img src="{{ asset('img/profile.svg') }}" alt="">
-          <a>Username</a>
+          <a>{{ Auth::user()->name }}</a>
         </div>
         <div id="myDropdown" class="dropdown-content">
-          <a class="dropdown-header" href="#">MeatIDentify</a>
+          <a class="dropdown-header" href="/dashboard">MeatIDentify</a>
           <hr>
-          <a class="dropdown-item" href="profile">
+          <a class="dropdown-item" href="/profile">
             <img src="{{ asset('img/edit-profile.svg') }}" alt="">
             <p>Profile</p>
           </a>
@@ -46,7 +46,7 @@
               dropdown.style.display = "none";
           }
       }
-  
+
       // Untuk menutup dropdown saat mengklik di luar dropdown
       // window.onclick = function(event) {
       //     if (!event.target.matches('.dropbtn')) {

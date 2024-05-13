@@ -37,99 +37,76 @@
 </html> --}}
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="{{ asset('css/globals.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-  </head>
-  <body>
-    <div class="register-page">
-      <div class="overlap-wrapper">
-        <div class="overlap">
-          <div class="app-root-cu-login">
-            <div class="overlap-group">
-              <img class="div-login-page-new" src="img/register_bg.png" />
-              <div class="div">
-                <div class="text-wrapper">Already have an account?</div>
-                <div class="link"><a href="login"><div class="text-wrapper-2">Sign in</div></a></div>
-                <form action="{{ route('register') }}" method="POST">
-                @csrf
-                <div class="div-login-page-new-2">
-                  <div class="cu-login-form">Create an Account</div>
-                  <div class="overlap-group-2">
-                    <div class="cu-login-form-form">
-                        {{-- <div class="text-wrapper-3">Sign Up</div> --}}
-                        <input type="submit" value="Sign up" class="submit-btn"/>
-                    </div>
-                    <div class="cu-login-form-form-2"></div>
-                  </div>
-                  <div class="cu-login-form-form-3">Email</div>
-                  <div class="cu-login-form-form-4">
-                    {{-- <div class="div-placeholder"><div class="text-wrapper-4">Enter your email</div></div> --}}
-                    {{-- <img class="img" src="img/register_ikon1.png" /> --}}
-                    {{-- input email --}}
-                    <div class="input-log">
-                        <input class="new-input" placeholder="Enter your email" type="email" name="email" id="email" required>
-                    </div>
-                  </div>
-                  <div class="cu-login-form-form-5">Name</div>
-                  <div class="cu-login-form-form-6">
-                    {{-- <div class="div-wrapper"><div class="text-wrapper-5">Enter your Name</div></div>
-                    <img class="cu-login-form-form-7" src="img/register_ikon2.png" /> --}}
-                    {{-- input pass --}}
-                    <div class="input-log">
-                        <input class="new-input" type="text" name="name" id="name" placeholder="Enter your name" required>
-                    </div>
-                  </div>
-                  <div class="cu-login-form-form-8">Password</div>
-                  <div class="cu-login-form-form-10">
-                    {{-- <div class="div-wrapper"><div class="text-wrapper-6">Enter password</div></div>
-                    <img class="cu-login-form-form-7" src="img/register_ikon3.png" /> --}}
-                    {{-- input pass --}}
-                    <div class="input-log">
-                        <input class="new-input" type="password" name="password" id="password" placeholder="Enter password" required>
-                    </div>
-                  </div>
-                  <div class="cu-login-form-form-9">Confirm Password</div>
-                  <div class="cu-login-form-form-11">
-                    {{-- <div class="div-wrapper"><div class="text-wrapper-7">Confirm password</div></div>
-                    <img class="cu-login-form-form-7" src="img/register_ikon4.png" /> --}}
-                    <div class="input-log">
-                        <input class="new-input" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm password" required>
-                    </div>
-                  </div>
-                  <a href="{{ route('auth.google') }}">
-                  <div class="body-button">
-                    <img class="SVG" src="img/register_ikon5.png" />
-                    <div class="span"><div class="text-wrapper-8">Sign up with Google</div></div>
-                  </div>
-                  </a>
-                  <div class="link-2">
-                    <img class="SVG-2" src="img/register_ikon6.png" />
-                    <div class="div-login-page-new-3"><div class="text-wrapper-9">Help</div></div>
-                  </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav>
+            <div class="left">
+                <div class="logo">
+                    <a href="/"><img src="img/logo.png" alt="" /></a>
                 </div>
-              </div>
-              </form>
-              <div class="div-login-page-new-4">
-                <div class="overlap-2">
-                  <p class="p">This site is protected by reCAPTCHA and the Google</p>
-                  <div class="link-3"><div class="text-wrapper-10">Privacy Policy</div></div>
-                </div>
-                <div class="overlap-3">
-                  <div class="and">and</div>
-                  <div class="link-4"><div class="text-wrapper-11">Terms of Service</div></div>
-                </div>
-                <div class="apply">apply.</div>
-              </div>
             </div>
-            <img class="frame" src="img/namalogo.png" />
-          </div>
-          <div class="text-wrapper-12">Already have an account?</div>
-          <a href="login"><div class="link-5"><div class="text-wrapper-13">Sign in</div></div></a>
+            <div class="right">
+                <div class="nav-dont">
+                    <p>Already have an account?</p>
+                </div>
+                <div class="login">
+                    <div class="img-holder">
+                        <img src="img/profile.svg" alt="">
+                    </div>
+                    <a href="login">Sign In</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main">
+            <div class="background">
+                <img src="img/login_bg_new.png" alt="">
+            </div>
+            <form action="{{ route('register') }}" method="POST">
+                @csrf
+                <h3>Create an Account!</h3>
+
+                <label for="name">Name</label>
+                <input type="name" name="name" id="name"  placeholder="Enter your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"  placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" autocomplete="new-password"  placeholder="Enter password" required>
+
+                <label for="password">Confirm Password</label>
+                <input type="password" type="password" name="password_confirmation" id="password_confirmation" autocomplete="new-password" placeholder="Confirm password" required>
+
+                <input type="submit" class="button" value="Sign in">
+                <a href="{{ route('auth.google') }}">
+                    <div class="social">
+                        <div class="go"><i class="fab fa-google"></i> Sign up with Google</div>
+                    </div>
+                </a>
+            </form>
         </div>
-      </div>
     </div>
-  </body>
+    @if ($errors->any())
+    <script>
+        var errorMessage = @json($errors->all());
+        alert(errorMessage.join('\n'));
+    </script>
+    @endif
+
+    @if(session('success'))
+        <script>
+            alert("{{ session('success') }}");
+        </script>
+    @endif
+<body>
 </html>

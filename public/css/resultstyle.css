@@ -17,9 +17,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-  
+
 .meat-result {
     display: flex;
     width: 100vw;
@@ -38,11 +40,12 @@ nav .right {
 
 nav .logo img {
     height: 3.2vw;
-    margin: 0.3vw 0.2vw; 
+    margin: 0.3vw 0.2vw;
 }
 
 nav .navigation {
     display: flex;
+    align-items: center;
     gap: 2.5rem;
     padding: 1rem;
 }
@@ -75,11 +78,12 @@ nav .login a {
 
 #myDropdown {
     margin-top: .5vw;
-    display: none;  
+    margin-right: 4rem;
+    display: none;
     position: absolute;
     background-color: #f9f9f9;
     /* min-width: 160px; */
-    width: 11.5vw;
+    width: auto;
     box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.2);
     z-index: 10;
     border-radius: 15px;
@@ -104,7 +108,7 @@ nav .login a {
 
 .dropdown-content .dropdown-item:hover {
     background-color: #e6e3e3;
-    border-radius: inherit;
+    border-radius: 0.75rem;
     /* padding: 10px 14px; */
 }
 
@@ -123,8 +127,11 @@ nav .login a {
     width: 45%;
     margin: 4vw 10vw;
   }
-  
-  
+
+.meat-result {
+   height: 80vh;
+}
+
 .result-media {
     position: relative;
     width: 100%;
@@ -141,8 +148,9 @@ nav .login a {
     margin-top: 6vw;
     width: 26vw;
     border-radius: 40px; /* Atur border radius untuk container */
-    overflow: hidden; 
+    overflow: hidden;
     /* background-color: tomato;  */
+
 }
 
 .container-g2 {
@@ -154,24 +162,25 @@ nav .login a {
     margin-top: 6vw;
     width: 26vw;
     border-radius: 40px; /* Atur border radius untuk container */
-    overflow: hidden; 
+    overflow: hidden;
     /* background-color: tomato;  */
 }
 
 .gambar1 {
     width: 100%; /* Mengisi lebar container */
-    height: auto; /* Menyesuaikan tinggi sesuai proporsi gambar */
+    height: 35vh; /* Menyesuaikan tinggi sesuai proporsi gambar */
+    object-fit: cover;
 }
 
 .gambar2 {
     /* margin-top: 7vw; */
     /* width: 27vw; */
     width: 100%; /* Mengisi lebar container */
-    height: auto;
+    height: 35vh;
     /* border-radius: 20px; */
 }
 
-/* 
+/*
 .result-media::before {
     content: '';
     width: 20vw;
@@ -182,7 +191,7 @@ nav .login a {
     bottom: 0;
     left: 0;
 } */
-  
+
 .title {
     color: #292D34;
     font-family: interextrabold;
@@ -191,7 +200,7 @@ nav .login a {
     line-height: 60px; /* 140% */
     letter-spacing: -0.5px;
 }
-  
+
 .desc {
     color: #292D34;
     font-family: intermedium;
@@ -201,13 +210,13 @@ nav .login a {
     line-height: 25px; /* 156.25% */
     margin-top: 2vw;
 }
-  
+
 .result-detail {
     display: flex;
     gap: 1vw;
     margin-top: 3vw;
 }
-  
+
 .result-item {
     font-family: interextrabold;
     color: white;
@@ -217,11 +226,11 @@ nav .login a {
 }
 
 .result-item.meat-type {
-    background-color: #7B68EE; 
+    background-color: #7B68EE;
     box-shadow: 0px 10px 25px 0px rgba(31, 26, 57, 0.25);
     padding: 1.5vw 4vw;
 }
-  
+
 .result-item.accuracy {
     background-color: #2DE2A1;
     box-shadow: 0px 10px 25px 0px rgba(15, 14, 14, 0.1);
@@ -242,6 +251,10 @@ nav .login a {
     height: 2vw;
     display: flex;
     gap: 0.4rem;
+}
+
+.button-section a {
+    text-decoration: none;
 }
 
 .nutrition {
@@ -267,8 +280,8 @@ nav .login a {
 
 .garis-horizontal {
     width: 10vw;
-    height: 0.5vw; 
-    background-color: #2DE2A1; 
+    height: 0.5vw;
+    background-color: #2DE2A1;
     border-radius: 2vw;
     margin: 2vw 0 3vw 0;
 }
@@ -288,7 +301,7 @@ nav .login a {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto); 
+    grid-template-rows: repeat(2, auto);
     gap: 1vw;
     /* padding: 10vw; */
 }
@@ -301,17 +314,17 @@ nav .login a {
     border: 1px solid #ccc;
     padding: 1vw 1vw;
     border-radius: 2vw;
-    height: 15vw; 
+    height: 15vw;
     width: 25vw;
     gap: 2vw;
-    max-width: 100%; 
-    height: 15vw; 
+    max-width: 100%;
+    height: 15vw;
     width: 20vw ;
 } */
 
 .grid-item img {
-    max-width: 100%; 
-    height: 14vw; 
+    max-width: 100%;
+    height: 14vw;
     width: 21vw ;
     gap: 0;
 }
@@ -353,6 +366,10 @@ nav .login a {
     width: 1.5vw;
 }
 
+.try-another a {
+    text-decoration: none;
+}
+
 footer .about {
     display: flex;
     justify-content: space-between;
@@ -370,6 +387,7 @@ footer .about {
     width: 60ch;
     font-family: "intermedium", sans-serif;
     line-height: 22px;
+    margin-top: 1.5rem;
   }
 
   footer .about .right {
@@ -380,18 +398,23 @@ footer .about {
   footer .about .right h3 {
     font-size: 1.5rem;
     font-family: "interbold", sans-serif;
+    margin-bottom: 1.75rem;
   }
   footer .about .right .sect-1 .icon {
     margin-top: 1rem;
     display: flex;
     gap: 0.5rem;
   }
-
   footer .about .right .sect-2 p {
     margin-top: 1rem;
     display: flex;
     gap: 0.5rem;
     font-family: "intermedium", sans-serif;
+    text-decoration: none;
+  }
+
+  footer .about .right .sect-2 a {
+    text-decoration: none;
   }
 
   footer .copyright {
