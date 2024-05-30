@@ -1,6 +1,6 @@
 @section('title', 'Result')
 @include('layouts.navbar')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <div class="result-page">
     <div class="meat-result">
       <div class="result-content">
@@ -90,6 +90,45 @@
         </div>
       </div>
     @endif
+
+    <div class="rating">
+        <div class="content">
+            @if($review)
+                <div class="review">
+                    <h3>Your Review</h3>
+                    <div class="star-rating">
+                        @for($i = 5; $i >= 1; $i--)
+                            @if($i <= $review->rate)
+                                <i class="bi bi-star-fill" style="color: gold;"></i>
+                            @else
+                                <i class="bi bi-star-fill" style="color: #ccc;"></i>
+                            @endif
+                        @endfor
+                    </div>
+                    <div class="commented">
+                        <p>{{ $review->comment }}</p>
+                    </div>
+                </div>
+            @else
+                <form action="{{ route('review', ['id' => $image->id]) }}" method="POST">
+                    @csrf
+                    <h3>How was your experience about this result?</h3>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5"><i class="bi bi-star-fill"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4"><i class="bi bi-star-fill"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3"><i class="bi bi-star-fill"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2"><i class="bi bi-star-fill"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1"><i class="bi bi-star-fill"></i></label>
+                    </div>
+                    <div class="comment">
+                        <textarea name="comment" id="comment" placeholder="Describe your experience here"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            @endif
+        </div>
+    </div>
+
     <div class="try-another">
       <h3 class="title">Search your food by MeatIDentify.</h3>
       <a class="btn-try-another" href="/dashboard">

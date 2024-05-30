@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/styleguide.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ asset('img/logo-only.png') }}" type="image/x-icon"/>
     <title>MeatIDentify</title>
   </head>
   <body>
@@ -14,7 +15,7 @@
         <img class="logo" src="img/namalogo.png" alt="Logo"/>
         <div class="navigation">
             <a href="register" class="button">Sign Up</a>
-            <a href="login" class="button">Log in</a>
+            <a href="login" class="button" style="background-color:rgb(228, 98, 228);">Sign In</a>
         </div>
     </div>
   </header>

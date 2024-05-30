@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\PredictionHelper;
 use App\Models\User;
 use App\Models\Image;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Actions\PredictionHelper;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
@@ -23,8 +25,11 @@ class UserController extends Controller
             $image->uploaded_at = Carbon::parse($image->uploaded_at);
         }
 
+        $hasImages = $recentImages->isNotEmpty();
+
         return view('dashboard', [
             'recent_image' => $recentImages,
+            'has_images' => $hasImages,
         ]);
     }
 
@@ -45,7 +50,7 @@ class UserController extends Controller
             'file',
             file_get_contents($image),
             'image.jpg'
-        )->post('https://7a44-34-138-16-51.ngrok-free.app/predict');
+        )->post('https://c00d-34-132-5-249.ngrok-free.app/predict');
 
         // Tanggapi hasil prediksi
         $prediction = $response->json();
@@ -54,8 +59,13 @@ class UserController extends Controller
             // Ambil predicted_class dan probabilities dari respons JSON
             $predictedClass = $prediction['predicted_class'];
             $probabilities = $prediction['probabilities_class'];
+
+            if ($probabilities < 50.00) {
+                session()->flash('alert', 'Apologies, there was an issue detected of your image. Please make sure the image is clear before trying again.');
+                return back();
+            }
         } else {
-            return back()->with('error', 'Failed to get prediction from API');
+            return back()->with('error', 'Failed to get the prediction status');
         }
 
         // Menentukan meat_id berdasarkan predicted_class
@@ -96,21 +106,48 @@ class UserController extends Controller
     public function show($id)
     {
         $image = Image::findOrFail($id);
-        return view('result', ['image' => $image]);
+        $review = Review::where('image_id', $id)->first();
+        return view('result', [
+            'image' => $image,
+            'review' => $review,
+        ]);
     }
 
     public function history()
     {
         $user = Auth::user();
-        $recentImages = $user->images->all();
+        $recentImages = Image::where('user_id', $user->id)->latest()->get();
 
         // Mengonversi waktu uploaded_at menjadi objek Carbon
         foreach ($recentImages as $image) {
             $image->uploaded_at = Carbon::parse($image->uploaded_at);
         }
 
+        $hasImages = $recentImages->isNotEmpty();
+
         return view('history', [
             'recent_image' => $recentImages,
+            'has_images' => $hasImages,
         ]);
+    }
+
+    public function review(Request $request, $id)
+    {
+        // Validasi input
+        $request->validate([
+            'rating' => 'required|integer|min:1|max:5',
+            'comment' => 'nullable',
+        ]);
+
+        // Simpan data review ke dalam database
+        $review = new Review();
+        $review->user_id = auth()->user()->id;
+        $review->image_id = $id;
+        $review->rate = $request->rating;
+        $review->comment = $request->comment;
+        $review->save();
+
+        // Redirect atau berikan respons sesuai kebutuhan Anda
+        return redirect()->route('result', ['id' => $id])->with('success', 'Review has been submitted successfully!');
     }
 }

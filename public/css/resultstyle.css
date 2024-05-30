@@ -329,6 +329,92 @@ nav .login a {
     gap: 0;
 }
 
+.rating {
+    background-color: #f4f4f4;
+    margin: 5vw;
+    padding: 4vw 5vw;
+    display: flex;
+    border-radius: 4vw;
+}
+
+.rating .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.rating .content h3{
+    text-align: center;
+    font-family: interextrabold;
+    font-size: 26px;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    order: 1;
+}
+
+.star-rating i {
+    font-size: 36px;
+    color: #d0d0d0;
+}
+
+.star-rating input[type="radio"]:checked ~ label i {
+    color: rgb(255, 221, 26);
+}
+
+.rating .content textarea {
+    width: 42vw;
+    min-height:7vw;
+    resize: none;
+    border-radius: 12px;
+    border: rgb(156, 165, 175) 1px solid;
+    padding: 1rem;
+    font-family: intermedium;
+}
+
+.rating .content button {
+    border-radius: 12px;
+    margin: 2rem 0 0 0;
+    border: none;
+    justify-content: center;
+    padding: 0.7rem 1.25rem;
+    cursor: pointer;
+    background-color: #7B68EE;
+    font-size: 16px;
+    color: white;
+    font-family: intermedium;
+}
+
+.rating .content .commented{
+    margin-top: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgb(214, 218, 224);
+    background-color: white;
+    padding: 1.5rem 0;
+    width: 42vw;
+    height: auto;
+}
+
+.rating .content .commented p{
+    font-family: intermedium;
+    font-size: 15px;
+}
+
 .try-another {
     display: flex;
     flex-direction: column;

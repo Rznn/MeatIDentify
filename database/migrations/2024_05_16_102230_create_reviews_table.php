@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('meat_id');
-            $table->string('image_path');
-            $table->dateTime('uploaded_at');
-            $table->float('probability')->nullable();
+            $table->unsignedBigInteger('image_id');
+            $table->integer('rate');
+            $table->text('comment')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('meat_id')->references('id')->on('meats');
+            $table->foreign('image_id')->references('id')->on('images');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('image');
+        Schema::dropIfExists('reviews');
     }
 };

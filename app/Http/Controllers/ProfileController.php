@@ -34,7 +34,7 @@ class ProfileController extends Controller
     public function updatePassword(Request $request)
     {
         $user = Auth::user();
-        
+
         $request->validate([
             'current_password' => 'required',
             'password' => 'required|confirmed|min:8',

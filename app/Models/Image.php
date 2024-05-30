@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'image_path',
@@ -17,6 +19,8 @@ class Image extends Model
         'meat_id',
     ];
 
+    protected $dates = ['deleted_at'];
+
     public function meats()
     {
         return $this->belongsTo(Meat::class, 'meat_id');
@@ -25,6 +29,11 @@ class Image extends Model
     public function users()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 
     // protected $attributes = [

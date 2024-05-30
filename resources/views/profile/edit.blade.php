@@ -9,7 +9,7 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="input" name="email" value="{{ $user->email }}">
+                <input type="email" class="input" name="email" value="{{ $user->email }}" readonly>
             </div>
 
             <div class="form-group">

@@ -18,6 +18,7 @@
     </div>
 </div>
 
+@if ($has_images)
 <div class="history">
     <div class="recent">
         <img src="img/recent.svg" alt="">
@@ -42,40 +43,9 @@
             </div>
         </div>
         @endforeach
-        {{-- <div class="card">
-            <div class="img-holder">
-                <img src="img/r-input-meat.jpg" alt="">
-            </div>
-            <div class="desc">
-                <div class="left">
-                    <img src="img/clock1.svg" alt="">
-                    <p>2 hours ago</p>
-                </div>
-                <div class="right">
-                    <div class="button">
-                        Meat
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="img-holder">
-                <img src="img/r-input-pork.jpg" alt="">
-            </div>
-            <div class="desc">
-                <div class="left">
-                    <img src="img/clock1.svg" alt="">
-                    <p>2 hours ago</p>
-                </div>
-                <div class="right">
-                    <div class="button">
-                        Pork
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </div>
 </div>
+@endif
 
 <div class="how-to">
 <h2>How MeatIDentify Works</h2>
@@ -108,6 +78,11 @@
 <script>
     var errorMessage = @json($errors->all());
     alert(errorMessage.join('\n'));
+</script>
+@endif
+@if (session()->has('alert'))
+<script>
+    alert('{{ session('alert') }}');
 </script>
 @endif
 @include('layouts.footer')

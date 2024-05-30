@@ -3,6 +3,7 @@
 
     <div class="history">
         <div class="recent"><img src="img/recent.svg" alt=""><h5>Recently Search</h5></div>
+        @if ($has_images)
         <div class="grid">
             @foreach ($recent_image as $image)
             <div class="card">
@@ -12,41 +13,12 @@
                 </div>
             </div>
             @endforeach
-
-            {{-- <div class="card">
-                <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-                <div class="desc"><div class="left"><p>2 hours ago</p> </div>
-                    <div class="right"><div class="button">Meat</div></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-                <div class="desc"><div class="left"><p>2 hours ago</p> </div>
-                    <div class="right"><div class="button">Meat</div></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-                <div class="desc"><div class="left"><p>2 hours ago</p></div>
-                    <div class="right"><div class="button">Meat</div></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-                <div class="desc"><div class="left"><p>2 hours ago</p> </div>
-                    <div class="right"><div class="button">Meat</div></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-holder"><img src="img/pork1.png" alt=""></div>
-                <div class="desc"><div class="left"><p>2 hours ago</p> </div>
-                    <div class="right"><div class="button">Meat</div></div>
-                </div>
-            </div> --}}
         </div>
+        @else
+        <div class="noimage">
+            <h3>Oops! It looks like there are no uploaded images yet.</h3>
+        </div>
+        @endif
     </div>
 
 @include('layouts.footer')
