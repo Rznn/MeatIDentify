@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class NotUser
+class OnlyAdmin
 {
     /**
      * Handle an incoming request.
@@ -18,6 +18,15 @@ class NotUser
     {
         //guest
         if (! Auth::check()) {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect()->route('login');
+        }
+
+        //ketika akun yang login bukan admin
+        if(Auth::user()->role_id != 1)
+        {
             Auth::logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();

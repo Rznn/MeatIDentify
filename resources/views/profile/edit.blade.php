@@ -5,7 +5,7 @@
         <h1 class="centered-heading">Edit Profile</h1>
         <form action="{{ route('profile.update') }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('put')
 
             <div class="form-group">
                 <label for="email">Email</label>
@@ -25,7 +25,7 @@
         <h1 class="centered-heading">Change Password</h1>
         <form action="{{ route('profile.updatePassword') }}" method="POST">
             @csrf
-
+            @method('put')
             <div class="form-group">
                 <label for="current_password">Current Password</label>
                 <input type="password" name="current_password" placeholder="Enter current password">

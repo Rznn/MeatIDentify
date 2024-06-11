@@ -26,7 +26,7 @@
         <div id="myDropdown" class="dropdown-content">
           <a class="dropdown-header" href="/dashboard">MeatIDentify</a>
           <hr>
-          <a class="dropdown-item" href="/profile">
+          <a class="dropdown-item" href="{{ route('profile.show') }}">
             <img src="{{ asset('img/edit-profile.svg') }}" alt="">
             <p>Profile</p>
           </a>

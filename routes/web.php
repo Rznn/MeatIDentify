@@ -26,25 +26,32 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 
-Route::group(['middleware' => 'user'], function () {
-    Route::get('/dashboard', [UserController::class, 'dashboard']);
-    Route::get('/history', [UserController::class, 'history']);
-
+Route::group(['middleware' => 'nologin'], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    Route::post('/upload', [UserController::class, 'store'])->name('upload');
-    Route::get('/result/{id}', [UserController::class, 'show'])->name('result');
-    Route::post('/result/{id}/review', [UserController::class, 'review'])->name('review');
+    Route::group(['middleware' => 'user'], function () {
+        Route::get('/dashboard', [UserController::class, 'dashboard']);
 
-    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
-    Route::get('/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/update', [ProfileController::class, 'update'])->name('profile.update');
-    Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+        Route::get('/history', [UserController::class, 'history']);
+
+
+        Route::post('/upload', [UserController::class, 'store'])->name('upload');
+        Route::get('/result/{id}', [UserController::class, 'show'])->name('result');
+        Route::post('/result/{id}/review', [UserController::class, 'review'])->name('review');
+
+        Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+        Route::get('/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::put('/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::put('/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+    });
+    
+    Route::group(['middleware' => 'admin'], function () {
+        Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+        Route::get('/admin/control', [AdminController::class, 'control']);
+        Route::get('/admin/control/{id}/delete', [AdminController::class, 'delete']);
+        Route::get('/admin/manage', [AdminController::class, 'manage']);
+        Route::get('/admin/manage/{id}/restore', [AdminController::class, 'restore']);
+    });
 });
 
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
-Route::get('/admin/control', [AdminController::class, 'control']);
-Route::get('/admin/control/{id}/delete', [AdminController::class, 'delete']);
-Route::get('/admin/manage', [AdminController::class, 'manage']);
-Route::get('/admin/manage/{id}/restore', [AdminController::class, 'restore']);
 

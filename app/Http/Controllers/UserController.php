@@ -37,7 +37,7 @@ class UserController extends Controller
     {
         // Validasi input
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:5120',
         ]);
 
         // Simpan gambar ke penyimpanan
@@ -50,7 +50,7 @@ class UserController extends Controller
             'file',
             file_get_contents($image),
             'image.jpg'
-        )->post('https://c00d-34-132-5-249.ngrok-free.app/predict');
+        )->post('https://api-meat-flask.vercel.app/predict');
 
         // Tanggapi hasil prediksi
         $prediction = $response->json();

@@ -13,8 +13,10 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'user' => \App\Http\Middleware\NotUser::class,
+            'nologin' => \App\Http\Middleware\NotLogin::class,
             'guest' => \App\Http\Middleware\Guest::class,
+            'admin' => \App\Http\Middleware\OnlyAdmin::class,
+            'user' => \App\Http\Middleware\OnlyUser::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
